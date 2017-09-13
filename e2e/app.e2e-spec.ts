@@ -1,14 +1,14 @@
-import { AppPage } from './app.po';
+import { APMPage } from './app.po';
 
-describe('ng-angular-squash-project App', () => {
-  let page: AppPage;
+describe('apm App', () => {
+  let page: APMPage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new APMPage();
   });
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('Welcome to Angular: Getting Started!!');
   });
 });
