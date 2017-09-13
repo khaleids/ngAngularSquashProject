@@ -19,7 +19,9 @@ import { CenterService } from "./centers/center.service";
       </div>
   </nav>
   <div class='container'>
+      <flash-messages></flash-messages> 
       <router-outlet></router-outlet>
+
   </div>
 </div>
 `,

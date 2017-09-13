@@ -13,6 +13,8 @@ import { CenterGuardService } from './centers/center-guard.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ValidateService } from './services/validate.service';
+import {FlashMessagesModule} from 'angular2-flash-messages';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,8 @@ import { ValidateService } from './services/validate.service';
         { path: 'register', component: RegisterComponent },        
         { path: '', redirectTo: 'welcome', pathMatch: 'full'},
         { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
-    ])
+    ]),
+    FlashMessagesModule
     
   ],
   providers: [CenterGuardService,ValidateService],
