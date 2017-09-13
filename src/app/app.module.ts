@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { StarComponent } from './shared/star.component';
@@ -13,6 +14,8 @@ import { CenterGuardService } from './centers/center-guard.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ValidateService } from './services/validate.service';
+import { AuthService } from './services/auth.service';
+
 import {FlashMessagesModule} from 'angular2-flash-messages';
 
 @NgModule({
@@ -28,6 +31,7 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     HttpClientModule,
     RouterModule.forRoot([
         { path: 'centers', component: CentersListComponent },
@@ -41,7 +45,7 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
     FlashMessagesModule
     
   ],
-  providers: [CenterGuardService,ValidateService],
+  providers: [CenterGuardService,ValidateService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
