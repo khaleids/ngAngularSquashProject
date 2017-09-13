@@ -8,10 +8,14 @@ import { CenterService } from "./centers/center.service";
   <nav class='navbar navbar-default'>
       <div class='container-fluid'>
           <a class='navbar-brand'>{{pageTitle}}</a>
-          <ul class='nav navbar-nav'>
-              <li><a [routerLink]="['/welcome']">Home</a></li>
-              <li><a [routerLink]="['/centers']">Centers List</a></li>
+          <ul class='nav navbar-nav navbar-left'>
+              <li  [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/welcome']">Home</a></li>
+              <li  [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/centers']">Centers List</a></li>
           </ul>
+          <ul class='nav navbar-nav navbar-right'>
+          <li  [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/login']">Login</a></li>
+          <li  [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/register']">Register</a></li>
+      </ul>
       </div>
   </nav>
   <div class='container'>
