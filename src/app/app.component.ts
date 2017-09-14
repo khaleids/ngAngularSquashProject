@@ -11,6 +11,8 @@ import { CenterService } from "./centers/center.service";
           <ul class='nav navbar-nav navbar-left'>
               <li  [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/welcome']">Home</a></li>
               <li  [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/centers']">Centers List</a></li>
+              <li  [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/booking']">Booking</a></li>
+              
           </ul>
           <ul class='nav navbar-nav navbar-right'>
           <li  [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/login']">Login</a></li>

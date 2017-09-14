@@ -18,6 +18,10 @@ import { AuthService } from './services/auth.service';
 
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { BookingComponent } from './booking/booking.component';
+
+import {CalendarModule} from "ap-angular2-fullcalendar";
+
 
 @NgModule({
   declarations: [
@@ -28,7 +32,8 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
     CentersDetailsComponent,
     LoginComponent,
     RegisterComponent,
-    MyprofileComponent
+    MyprofileComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,
@@ -41,14 +46,17 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
         { path: 'welcome', component: WelcomeComponent },
         { path: 'login', component: LoginComponent },
         { path: 'register', component: RegisterComponent },  
-        { path: 'myprofile', component: MyprofileComponent },       
+        { path: 'myprofile', component: MyprofileComponent },     
+        { path: 'booking', component: BookingComponent },       
         { path: '', redirectTo: 'welcome', pathMatch: 'full'},
         { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
     ]),
-    FlashMessagesModule
+    FlashMessagesModule,
+    CalendarModule
+    
     
   ],
   providers: [CenterGuardService,ValidateService,AuthService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] 
 })
 export class AppModule { }
