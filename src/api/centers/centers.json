@@ -3,7 +3,7 @@
         "centerId": 1,
         "centerName": "Leaf Rake",
         "centerAddress": "GDN-0011",
-        "courts":[{"courtId":7,"status": "available"}, {"courtId":4,"status": "busy"}, {"courtId":6,"status": "single"}] ,
+        "courts":[{"courtId":7,"status": "available"},{"courtId":1,"status": "available"}, {"courtId":4,"status": "busy"}, {"courtId":6,"status": "single"}] ,
         "description": "Leaf rake with 48-inch wooden handle.",
         "price": 19.95,
         "starRating": 3.2,
