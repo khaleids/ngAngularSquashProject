@@ -35,16 +35,18 @@ export class CentersDetailsComponent implements OnInit {
   }
 
   shi():number[]{
-
-    let center = this.center;
-    let courts = center.courts;
-    let total:any[] = [];
-    for (let i = 0 ; i < courts ; i++){
-      
-      total.push(i);
-     
-    }
-     return total;
-  }
+    
+        let center = this.center;
+        let courts :any[]=center.courts  ;
+    
+        console.log(courts);
+        let total:any[] = [];
+        for (let i = 0 ; i < courts.length ; i++){
+          
+          total.push(i);
+         
+        }
+         return total;
+      }
 
 }

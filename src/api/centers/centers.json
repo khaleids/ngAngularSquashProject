@@ -3,7 +3,7 @@
         "centerId": 1,
         "centerName": "Leaf Rake",
         "centerAddress": "GDN-0011",
-        "courts":7,
+        "courts":[{"courtId":7,"status": "available"}, {"courtId":4,"status": "busy"}, {"courtId":6,"status": "single"}] ,
         "description": "Leaf rake with 48-inch wooden handle.",
         "price": 19.95,
         "starRating": 3.2,
@@ -13,7 +13,7 @@
         "centerId": 2,
         "centerName": "Garden Cart",
         "centerAddress": "GDN-0023",
-        "courts":5,
+        "courts":[{"courtId":7,"status": "available"}, {"courtId":4,"status": "busy"}, {"courtId":6,"status": "single"}] ,
         
         "description": "15 gallon capacity rolling garden cart",
         "price": 32.99,
@@ -24,7 +24,7 @@
         "centerId": 5,
         "centerName": "Hammer",
         "centerAddress": "TBX-0048",
-        "courts":8,
+        "courts":[{"courtId":7,"status": "available"}, {"courtId":4,"status": "busy"}, {"courtId":6,"status": "single"}] ,
         
         "description": "Curved claw steel hammer",
         "price": 8.9,
@@ -35,7 +35,7 @@
         "centerId": 8,
         "centerName": "Saw",
         "centerAddress": "TBX-0022",
-        "courts":4,
+        "courts":[{"courtId":7,"status": "available"}, {"courtId":4,"status": "busy"}, {"courtId":6,"status": "single"}] ,
         
         "description": "15-inch steel blade hand saw",
         "price": 11.55,
@@ -46,7 +46,7 @@
         "centerId": 10,
         "centerName": "Video Game Controller",
         "centerAddress": "GMG-0042",
-        "courts":"9",
+        "courts":[{"courtId":7,"status": "available"}, {"courtId":4,"status": "busy"}, {"courtId":6,"status": "single"}] ,
     
         "releaseDate": "October 15, 2015",
         "description": "Standard two-button video game controller",
