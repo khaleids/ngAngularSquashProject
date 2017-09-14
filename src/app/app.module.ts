@@ -17,6 +17,7 @@ import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
 
 import {FlashMessagesModule} from 'angular2-flash-messages';
+import { MyprofileComponent } from './myprofile/myprofile.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
     StarComponent,
     CentersDetailsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MyprofileComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
         { path: 'centers/:id', canActivate: [ CenterGuardService ], component: CentersDetailsComponent },
         { path: 'welcome', component: WelcomeComponent },
         { path: 'login', component: LoginComponent },
-        { path: 'register', component: RegisterComponent },        
+        { path: 'register', component: RegisterComponent },  
+        { path: 'myprofile', component: MyprofileComponent },       
         { path: '', redirectTo: 'welcome', pathMatch: 'full'},
         { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
     ]),

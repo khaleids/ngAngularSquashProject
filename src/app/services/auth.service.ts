@@ -43,4 +43,11 @@ export class AuthService {
     return this.http.post(ep, user,{headers: headers})
       .map(res => res.json());
   }
+
+
+  logout(){
+    this.authToken = null;
+    this.user = null;
+    localStorage.clear();
+  }
 }
