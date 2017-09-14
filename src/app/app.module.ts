@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { StarComponent } from './shared/star.component';
+import { CommonModule } from '@angular/common';  
 
 import { AppComponent } from './app.component';
 import { CentersListComponent } from "./centers/centers-list.component";
@@ -37,6 +38,7 @@ import {CalendarModule} from "ap-angular2-fullcalendar";
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     HttpModule,
     HttpClientModule,

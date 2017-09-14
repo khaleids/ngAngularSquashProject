@@ -3,58 +3,60 @@
         {{pageTitle + ': ' + center.centerName}}
     </div>
     <div class='panel-body'>
-      <div class='row'>
-          <div class='col-md-6'>
-              <div class='row'>
-                  <div class='col-md-3'>Name:</div>
-                  <div class='col-md-6'>{{center.centerName}}</div>
-              </div>
-              <div class='row'>
-                  <div class='col-md-3'>Address:</div>
-                  <div class='col-md-6'>{{center.centerAddress}}</div>
-              </div>
-              <div class='row'>
-                <div class='col-md-3'>number of courts:</div>
-                <div class='col-md-6'>{{center.courts}}</div>
-            </div>
-              <div class='row'>
-                  <div class='col-md-3'>Description:</div>
-                  <div class='col-md-6'>{{center.description}}</div>
-              </div>
-              
-              <div class='row'>
-                  <div class='col-md-3'>Price:</div>
-                  <div class='col-md-6'>{{center.price|currency:'USD':true}}</div>
-              </div>
-              <div class='row'>
-                  <div class='col-md-3'>5 Star Rating:</div>
-                  <div class='col-md-6'>
-                      <pm-star [rating]='center.starRating'>
-                      </pm-star>
-                  </div>
-              </div>
-          </div>
-  
-          <div class='col-md-6'>
-              <img class='center-block img-responsive' 
-                   [style.width.px]='200' 
-                   [style.margin.px]='2' 
-                   [src]='center.imageUrl'
-                   [title]='center.centerName'>
-          </div>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>Name:</div>
+                    <div class='col-md-6'>{{center.centerName}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Address:</div>
+                    <div class='col-md-6'>{{center.centerAddress}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>number of courts:</div>
+                    <div class='col-md-6'>{{center.courts}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Description:</div>
+                    <div class='col-md-6'>{{center.description}}</div>
+                </div>
 
-         
-      </div>
-      <div >
-        <div name="planetmap" style="width: 278px;height: 125px; border-color:  #0000ff;border-style: solid;" >
-            <div *ngFor='let center of this.shi()' style=" background: black;width: 50px;height: 50px;margin-right: 2px;;margin-left: 2px;margin-bottom:10px;margin-top:3px;display: block;float: left; "></div>
-            
+                <div class='row'>
+                    <div class='col-md-3'>Price:</div>
+                    <div class='col-md-6'>{{center.price|currency:'USD':true}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>5 Star Rating:</div>
+                    <div class='col-md-6'>
+                        <pm-star [rating]='center.starRating'>
+                        </pm-star>
+                    </div>
+                </div>
+            </div>
+
+            <div class='col-md-6'>
+                <img class='center-block img-responsive' [style.width.px]='200' [style.margin.px]='2' [src]='center.imageUrl' [title]='center.centerName'>
+            </div>
+
+
         </div>
-      </div>
-  </div>
+        <div>
+            <div name="planetmap" style="width: 278px;height: 125px; border-color:  #0000ff;border-style: solid;">
+                <ng-container *ngFor='let center of this.shi(); let i = index'>
+                    <div *ngIf='getCourt(i) == "available"' style=" background: green;width: 50px;height: 50px;margin-right: 2px;;margin-left: 2px;margin-bottom:10px;margin-top:3px;display: block;float: left; "></div>
+                    <div *ngIf='getCourt(i) == "busy"' style=" background: red;width: 50px;height: 50px;margin-right: 2px;;margin-left: 2px;margin-bottom:10px;margin-top:3px;display: block;float: left; "></div>
+                    <div *ngIf='getCourt(i) == "single"' style=" background: yellow;width: 50px;height: 50px;margin-right: 2px;;margin-left: 2px;margin-bottom:10px;margin-top:3px;display: block;float: left; ">
+
+                    </div>
+                </ng-container>
+
+            </div>
+        </div>
+    </div>
     <div class='panel-footer'>
-      <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
           <i class='glyphicon glyphicon-chevron-left'></i> Back
       </a>
-  </div>
-  </div>
+    </div>
+</div>
