@@ -2,34 +2,49 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import {ICenter} from './center'
+import { CenterService } from "./center.service";
 @Component({
   selector: 'pm-centers-details',
-  templateUrl: './centers-details.component.html',
+  templateUrl:'./centers-details.component.html',
   styleUrls: ['./centers-details.component.css']
 })
 export class CentersDetailsComponent implements OnInit {
     pageTitle: string ='Center Details';
+    errorMessage: string;
+    
     center: ICenter;
-
   constructor(private _route: ActivatedRoute,
-    private _router: Router) { }
+    private _router: Router,
+    private _centertService: CenterService) { }
 
   ngOnInit() {
-    let id = +this._route.snapshot.paramMap.get('id');
-    this.pageTitle += `: ${id}`;
-    this.center =     {
-        "centerId": id,
-        "centerName": "Leaf Rake",
-        "centerAddress": "GDN-0011",
-        
-        "description": "Leaf rake with 48-inch wooden handle.",
-        "price": 19.95,
-        "starRating": 3.2,
-        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-    }
+    const id = +this._route.snapshot.paramMap.get('id');
+    this.getCenter(id);
+  }
+
+  getCenter(id: number): ICenter{
+    let center : ICenter;
+    this._centertService.getCenter(id).subscribe(
+      center => this.center=center,
+      error => this.errorMessage =<any>error
+    );
+    return center;
   }
   onBack(): void {
     this._router.navigate(['/centers']);
+  }
+
+  shi():number[]{
+
+    let center = this.center;
+    let courts = center.courts;
+    let total:any[] = [];
+    for (let i = 0 ; i < courts ; i++){
+      
+      total.push(i);
+     
+    }
+     return total;
   }
 
 }
