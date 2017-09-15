@@ -14,8 +14,11 @@ export class CentersListComponent implements OnInit {
     imageMargin: number = 2;
     showImage: boolean = false;
     errorMessage: string
-
+    filteredCenters: ICenter[];
+    centers:ICenter[]=[];
     _listFilter: string;
+
+    
     get listFilter(): string{
         return this._listFilter;
     }
@@ -23,8 +26,7 @@ export class CentersListComponent implements OnInit {
         this._listFilter=value;
         this.filteredCenters = this.listFilter? this.performFilter(this.listFilter):this.centers;
     }
-    filteredCenters: ICenter[];
-    centers:ICenter[]=[];
+    
 
     constructor(private _centerService: CenterService) {
 
